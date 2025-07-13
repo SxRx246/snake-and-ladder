@@ -1,0 +1,147 @@
+body{
+    align-items: center;
+}
+
+.character {
+    background-image: url('../assets/boyCharacter.png');
+    /* by this background size: this will let the image be within the div size */
+    background-size: contain;
+    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
+    background-repeat: no-repeat;
+}
+/* 
+@media screen and (min-width: 900px) {
+     
+    #container {
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+    width: 600px;;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    align-items: center;
+}
+
+.grid div {
+    width: 9.64%;
+    height: 9.65%;
+    border: 1px solid black;
+    text-align:center;
+    line-height: 66px;
+    font-size: 36px;
+  /* height: 200px; */
+    /* vertical-align:baseline */
+    /* position: relative; */
+    /* justify-content: end; */
+    /* align-items:end; */
+/* } */
+  /* } */ 
+
+/* @media screen and (min-width: 1920px) {
+          .grid{
+    width: 700px;;
+    height: 7000px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    align-items: center;
+}
+  } */
+
+
+  
+@media (max-width: 767px) {
+    #container {
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+    width: 600px;;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    align-items: center;
+}
+
+.grid div {
+    width: 9.64%;
+    height: 9.65%;
+    border: 1px solid black;
+    text-align:center;
+    line-height: 66px;
+    font-size: 36px;
+  /* height: 200px; */
+    /* vertical-align:baseline */
+    /* position: relative; */
+    /* justify-content: end; */
+    /* align-items:end; */
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.grid{
+    width: 900px;;
+    height: 900px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    align-items: center;
+    /* flex-direction: column-reverse; */
+}
+
+.grid div {
+    width: 9.763%;
+    height: 9.85%;
+    border: 1px solid black;
+    text-align:center;
+    line-height: 85px;
+    font-size: 55px;
+  /* height: 200px; */
+    /* vertical-align:baseline */
+    /* position: relative; */
+    /* justify-content: end; */
+    /* align-items:end; */
+}
+ }
+
+@media (min-width: 1025px) {
+    .grid{
+        width: 900px;;
+        height: 900px;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 60px;
+        align-items: center;
+        /* flex-direction: column-reverse; */
+    }
+
+    .grid div {
+        width: 9.835%;
+        height: 9.85%;
+        border: 1px solid black;
+        text-align:center;
+        line-height: 85px;
+        font-size: 55px;
+    /* height: 200px; */
+        /* vertical-align:baseline */
+        /* position: relative; */
+        /* justify-content: end; */
+        /* align-items:end; */
+    }
+}
+
+.diec{
+    height: 50px;
+    /* padding:  */
+    margin: 10px;
+}
