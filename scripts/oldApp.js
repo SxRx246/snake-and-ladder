@@ -10,7 +10,12 @@ const numberOfCells = gridWidth * gridWidth
 // the character will move based 
 // on the result of the diec
 
+
+// if the 
+
+
 let playerPosition = 0
+// Let  snakesPositions = [10,22,30,47,.....]
 let snakesPositions = [10, 22, 30, 47]
 let ladderPositions = [4, 9, 28, 52]
 let winOrLose = ""
@@ -27,6 +32,7 @@ const diceOutputElem = document.querySelector("#dice-output")
 
 
 function addCharacter(){
+    // playerPosition = (playerPosition +100)
     cells[playerPosition].classList.add('character')
 }
 
@@ -117,12 +123,21 @@ for (let i=100 ; i>=1; i--){
         const cell = document.createElement('div')
         cell.classList.add("cell")
 
+        // const tempCells = 
         const row = document.createElement('div')
         row.classList.add("row")
 
         reverseCount++
-       
+        // (7)by add this line we will notice that we are adding new class called duck into all divs
+        // cell.classList.add("duck")
         cell.textContent = i
+
+        // to keep it listen to clicks
+        // cell.addEventListener('click', handleClick)
+        // document.addEventListener('click', diec)
+
+        // textContent is the text content of the cell
+        // it is the same as the innerText
         
         // we will push all the divs into an array
         cells.push(cell)
@@ -136,14 +151,72 @@ for (let i=100 ; i>=1; i--){
             tempCells.splice(0, tempCells.length);
             reversedRow.forEach(cell => {
                 row.appendChild(cell)
+            // reversedRow.splice(0, reversedRow.length);
                 if (count % 2 === 1 )
                     row.classList.add("reverse")
             });
+
+        // if(reverseCount % 10 === 0 ){
+        //     gridElem.appendChild(row) 
+
+        // };
+
+
+
             gridElem.appendChild(row) 
-        }        
+        }
+        // console.log(row)
+
+        // what we just did is "create and push" directly into the array
+        // if ()
+        // gridElem.appendChild(row)        
     }
 
+        // console.log(cells)
+
 }
+
+// for (let i=10 ; i>=1; i--){
+//         // (1)thats will create 100 div
+//         const cell = document.createElement('div')
+//         // const tempCells = 
+//         const row = document.createElement('div')
+//         for (let j=10 ; j>=1; j--){
+//         // reverseCount++
+//         // (7)by add this line we will notice that we are adding new class called duck into all divs
+//         // cell.classList.add("duck")
+//         cell.textContent = i
+
+//         // to keep it listen to clicks
+//         // cell.addEventListener('click', handleClick)
+//         // document.addEventListener('click', diec)
+
+//         // textContent is the text content of the cell
+//         // it is the same as the innerText
+        
+//         // we will push all the divs into an array
+//         cells.push(cell)
+//         row.appendChild(cell)
+//     }
+//         // tempCells.push(cell)
+
+
+//         // if(reverseCount % 10 === 0 ){
+//         //     reversedRow = tempCells.map( cell => cell)
+//         //     tempCells.splice(0, tempCells.length);
+//         //     reversedRow.forEach(cell => {
+//         //         row.appendChild(cell)
+//         //     // reversedRow.splice(0, reversedRow.length);
+//         //     });
+   
+//         // }
+
+//         // what we just did is "create and push" directly into the array
+        
+//         gridElem.appendChild(row)        }
+//         console.log(cells)
+
+// } 
 
 createGrid()
 // play()
