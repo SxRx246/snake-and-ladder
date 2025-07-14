@@ -13,15 +13,25 @@ let playerPosition = 0
 let computerPosition = 0
 let snakesPositions = [12, 51, 79, 85, 95]
 let ladderPositions = [3, 19, 27, 43, 53, 70]
-let winOrLose = ""
+let playerWin = false
+let playerLose = false
 let diceOutput
 let computerDiceOutput
+let ladder = false
+let snake = false
+let reachedValue
 
 const gridElem = document.querySelector('.grid')
-const positionElem = document.querySelector('#current-position')
+const currentPositionElem = document.querySelector('#current-position')
+const computerCurrentPositionElem = document.querySelector('#computer-current-position')
 const pastPositionElem = document.querySelector('#past-position')
+const computerPastPositionElem = document.querySelector('#computer-past-position')
 const diceElem = document.querySelector('.diec');
 const diceOutputElem = document.querySelector("#dice-output")
+const computerOutputElem = document.querySelector('#computer-dice-output');
+const computerMessageElem = document.querySelector('#computer-message');
+const playerMessageElem = document.querySelector('#player-message');
+
 
 
 
@@ -51,19 +61,24 @@ function goingDown() {
 snakesPositions.forEach(snakesPosition => {
         if (playerPosition === 12 && snakesPosition === 12) {
             playerPosition = 6
+            snake = true
         }
         else if (playerPosition === 51 && snakesPosition === 51) {
             playerPosition = 47
+            snake = true
         }
         else if (playerPosition === 79 && snakesPosition === 79) {
             playerPosition = 75
+            snake = true
 
         }
         else if (playerPosition === 85 && snakesPosition === 85) {
             playerPosition = 14
+            snake = true
         }
         else if (playerPosition === 95 && snakesPosition === 95) {
             playerPosition = 62
+            snake = true
         }
     })
 }
@@ -74,18 +89,23 @@ function computerGoingDown() {
 snakesPositions.forEach(snakesPosition => {
         if (computerPosition === 12 && snakesPosition === 12) {
             computerPosition = 6
+            snake = true
         }
         else if (computerPosition === 51 && snakesPosition === 51) {
             computerPosition = 47
+            snake = true
         }
         else if (computerPosition === 79 && snakesPosition === 79) {
             computerPosition = 75
+            snake = true
         }
         else if (computerPosition === 85 && snakesPosition === 85) {
             computerPosition = 14
+            snake = true
         }
         else if (computerPosition === 95 && snakesPosition === 95) {
             computerPosition = 62
+            snake = true
         }
     })
 } 
@@ -96,91 +116,165 @@ function goingUp() {
     ladderPositions.forEach(ladderPosition => {
         if (playerPosition === 3 && ladderPosition === 3) {
             playerPosition = 15
+            ladder = true
         }
         else if (playerPosition === 19 && ladderPosition === 19) {
             playerPosition = 37
+            ladder = true
         }
         else if (playerPosition === 27 && ladderPosition === 27) {
             playerPosition = 77
+            ladder = true
         }
 
         else if (playerPosition === 43 && ladderPosition === 43) {
             playerPosition = 55
+            ladder = true
         }
         else if (playerPosition === 53 && ladderPosition === 53) {
             playerPosition = 72
+            ladder = true
         }
         else if (playerPosition === 70 && ladderPosition === 70) {
             playerPosition = 90
+            ladder = true
         }
     })
 }
+
 
 function computerGoingUp() {
     ladderPositions.forEach(ladderPosition => {
         if (computerPosition === 3 && ladderPosition === 3) {
             computerPosition = 15
+            ladder = true
         }
         else if (computerPosition === 19 && ladderPosition === 19) {
             computerPosition = 37
+            ladder = true
+
         }
         else if (computerPosition === 27 && ladderPosition === 27) {
             computerPosition = 77
+            ladder = true
+
         }
 
         else if (computerPosition === 43 && ladderPosition === 43) {
             computerPosition = 55
+            ladder = true
+
         }
         else if (computerPosition === 53 && ladderPosition === 53) {
             computerPosition = 72
+            ladder = true
         }
         else if (computerPosition === 70 && ladderPosition === 70) {
             computerPosition = 90
+            ladder = true
         }
     })
 }
 
 
 function otherPlayerDice(){
+    // ladder = false
+    // snake = false
+    computerPastPositionElem.textContent = `Computer's Past Position was ${99-computerPosition+1}`
+
     removeComputer();
     computerDiceOutput = Math.floor(Math.random() * 6) + 1
-    if (computerPosition<numberOfCells)
+    if ((computerPosition+computerDiceOutput+1)<=numberOfCells)
         computerPosition += computerDiceOutput
+        if((computerPosition+1) === 100 ){
+            playerLose = true
+        }
     else{
         computerPosition = computerPosition
-        console.log("you sould get less points to reach exactly 100")}
-    console.log("it is at "+(computerPosition+1) + " position" )
+        console.log("you sould get less points to reach exactly 100")
+    }
+    // console.log("it is at "+(computerPosition+1) + " position" )
+    reachedValue = computerPosition +1
     computerGoingDown();
     computerGoingUp();
     addComputer()
-    diceOutputElem.textContent = `The dice output:${computerDiceOutput}`
+    computerOutputElem.textContent = `Computer's Dice Output is ${computerDiceOutput}`
+    computerCurrentPositionElem.textContent = `Computer's Current Position is ${99- computerPosition +1}`
 }
 
 //  this function will be run to get a rando number between 1 -6 
 function diec(){
-    let printingPastPosition = (playerPosition - 99) 
-    pastPositionElem.textContent = `Past Position is ${printingPastPosition}`
+    ladder = false
+    snake = false
+    computerMessageElem.textContent = ""
+    playerMessageElem.textContent = ""
+    // let printingPastPosition = playerPosition
+    pastPositionElem.textContent = `Your Past Position was ${99-playerPosition+1}`
     removeCharacter();
     diceOutput = Math.floor(Math.random() * 6) + 1
-    if ((playerPosition-99)<numberOfCells)
+    if ((playerPosition+diceOutput+1)<=numberOfCells){
+        console.log("expected result: "+(playerPosition+diceOutput+1))
+        console.log(playerPosition+1)
         playerPosition += diceOutput
+        console.log(playerPosition+1)
+        if((playerPosition) === 100 ){
+            playerWin = true
+        }
+    }
     else{
-        playerPosition = playerPosition
+        playerPosition= playerPosition
+        console.log("when There are less steps"+playerPosition+1)
         console.log("you sould get less points to reach exactly 100")
     }
     // console.log("it is at "+(playerPosition+1) + " position" )
-    // let printingCurrentPosition = playerPosition 
+    // let printingCurrentPosition = playerPosition +1
 
-    positionElem.textContent = `Current Position is ${playerPosition}`
+    
+   
+    if (playerWin || playerLose){
+        // setTimeout(endGame() , 1000)
+        endGame()
+    }
+    else{
+    reachedValue = playerPosition +1
     goingDown();
     goingUp();
     addCharacter()
-    diceOutputElem.textContent = `The dice output:${diceOutput}`
-    setTimeout(otherPlayerDice, 400);
+    diceOutputElem.textContent = `Your Dice Output is ${diceOutput}`
+    currentPositionElem.textContent = `Your Current Position is ${99- playerPosition +1}`
+    if(ladder)
+        playerMessageElem.textContent = `You Went UP Because of the Ladder at ${reachedValue}`
+    else if (snake)
+        playerMessageElem.textContent = `You Went Down Because of the Snake at ${reachedValue}`
+
+
+    ladder = false
+    snake = false
+
+    setTimeout(otherPlayerDice, 500)
+    if(ladder)
+        computerMessageElem.textContent = `The Computer Went UP Because of the Ladder at ${reachedValue}`
+    else if (snake)
+        computerMessageElem.textContent = `The Computer Went Down Because of the Snake at ${reachedValue}`
+}
+    if (playerWin || playerLose){
+        // setTimeout(endGame() , 1000)
+        endGame()
+    }
 }
 
 function endGame(){
-    alert("The game is ended, your "+ winOrLose) 
+    if(playerWin)
+    alert("The game is ended, your a Winner")
+    if(playerLose)
+    alert("The game is ended, your Lose")
+
+    // if(playerWin || playerLose){
+    addCharacter()
+    // addComputer()
+    diceElem.removeEventListener('click', play); 
+// }
+
     // score = 0
     // scoreElem.textContent = "Your score is 0"
 }
@@ -192,9 +286,6 @@ function play(event){
             // playerTurn = false
             // computerTurn = true
         }
-    if ( playerPosition === 100 || computerPosition === 100){
-            endGame()
-    }
     // otherPlayerDice()
 
     
@@ -311,3 +402,8 @@ document.addEventListener("DOMContentLoaded",init)
 // then it is the computer turn
 // we will give him random dice number
 // then we will change the computer character 
+
+
+
+
+// the game over

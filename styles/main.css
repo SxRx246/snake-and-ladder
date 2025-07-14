@@ -1,6 +1,8 @@
 body{
     align-items: center;
     font-size: 40px;
+    /* font-family: "Raleway"; */
+    /* text-shadow: 4px 4px 5px rgb(136, 255, 0); */
 }
 
 .character {
@@ -12,6 +14,49 @@ body{
     /* background-size: cover; */
     background-position: center;
 }
+
+.cell {
+    width: 9.9%;
+    height: 9.65%;
+    border: 1px solid black;
+    text-align:center;
+    line-height: 66px;
+    font-size: 36px;
+  /* height: 200px; */
+    /* vertical-align:baseline */
+    /* position: relative; */
+    /* justify-content: end; */
+    /* align-items:end; */
+}
+
+.row  {
+    display: flex;
+    /* flex-direction: row-reverse; */
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.diec{
+    height: 200px;
+    /* padding:  */
+    margin: 20px;
+    align-items: center;
+
+}
+
+.computer{
+    background-image: url('../assets/computer.jpg');
+    /* by this background size: this will let the image be within the div size */
+    background-size: contain;
+    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+}
+
+
 /* 
 @media screen and (min-width: 900px) {
      
@@ -72,44 +117,3 @@ body{
     margin: 60px;
     align-items: center;
 } */
-
-.cell {
-    width: 9.9%;
-    height: 9.65%;
-    border: 1px solid black;
-    text-align:center;
-    line-height: 66px;
-    font-size: 36px;
-  /* height: 200px; */
-    /* vertical-align:baseline */
-    /* position: relative; */
-    /* justify-content: end; */
-    /* align-items:end; */
-}
-
-.row  {
-    display: flex;
-    /* flex-direction: row-reverse; */
-}
-
-.reverse {
-    flex-direction: row-reverse;
-}
-
-
-
-.diec{
-    height: 50px;
-    /* padding:  */
-    margin: 10px;
-}
-
-.computer{
-    background-image: url('../assets/computer.jpg');
-    /* by this background size: this will let the image be within the div size */
-    background-size: contain;
-    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
-    background-repeat: no-repeat;
-    /* background-size: cover; */
-    background-position: center;
-}

@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake and Ladder</title>
     <script src="scripts/app.js"></script>
     <link rel="stylesheet" href="styles/main.css">
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,368;1,368&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet"></head>
+
 <body>
+    <!-- <div class="full-container" style="background-color: black; display: ;"> -->
+        <!-- <div class="board"></div> -->
+        <div id="container">
+            <div class="player-values">
+                <p id="past-position">Your Past Position was 1</p>
+                <p id="dice-output">Your Dice Output is 0</p>
+                <p id="current-position">Your Current Position is 1</p>
+                <p id="player-message"></p>
+            </div>
+            <div class="grid-wrapper">
+                <div class="grid"></div>
+            </div>
+            <!-- <div class=""></div> -->
+            <audio id="congrats" src="assets\you-win-sequence-2-183949.mp3"></audio>
+            <img class="diec" src="assets\white-dice.avif" alt="white-diec">
 
-    <!-- <div class="board"></div> -->
-    <div id="container">
-    <p id="past-position">Past Position is 0</p>
-    <p id="dice-output">The dice output: 0</p>
-    <p id="current-position">Current Position is 0</p>
-    <div class="grid-wrapper">
-        <div class="grid"></div>
-    </div>
-    <audio id="congrats" src="assets\you-win-sequence-2-183949.mp3"></audio>
-    <img class="diec" src="assets\white-dice.avif" alt="white-diec">
-    
+            <div class="computer-values">
+                <p id="computer-past-position">Computer's Past Position was 1</p>
+                <p id="computer-dice-output">Computer's Dice Output is 0</p>
+                <p id="computer-current-position">Computer's Current Position is 1</p>
+                <p id="computer-message"></p>
+            </div>
 
-    </div>
+        <!-- </div> -->
 </body>
+
 </html>
