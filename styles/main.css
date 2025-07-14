@@ -1,5 +1,6 @@
 body{
     align-items: center;
+    font-size: 40px;
 }
 
 .character {
@@ -8,6 +9,8 @@ body{
     background-size: contain;
     /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
 }
 /* 
 @media screen and (min-width: 900px) {
@@ -86,6 +89,7 @@ body{
 
 .row  {
     display: flex;
+    /* flex-direction: row-reverse; */
 }
 
 .reverse {
@@ -98,4 +102,14 @@ body{
     height: 50px;
     /* padding:  */
     margin: 10px;
+}
+
+.computer{
+    background-image: url('../assets/computer.jpg');
+    /* by this background size: this will let the image be within the div size */
+    background-size: contain;
+    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
 }
