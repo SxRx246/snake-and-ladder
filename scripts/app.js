@@ -33,8 +33,8 @@ const computerMessageElem = document.querySelector('#computer-message');
 const playerMessageElem = document.querySelector('#player-message');
 const computerValuesElem = document.querySelector(".computer-values")
 const playerValuesElem = document.querySelector(".player-values")
-
-
+const restartElem = document.querySelector('#restart')
+// console.log(restartElem)
 
 
 function addCharacter(){
@@ -180,13 +180,10 @@ function computerGoingUp() {
 
 
 function otherPlayerDice(){
-    // ladder = false
-    // snake = false
+
     setTimeout(add(playerValuesElem),3000)
     remove(computerValuesElem)
-    
-    // setTimeout(remove(computerMessageElem),1)
-    // setTimeout(remove(computerMessageElem),1)
+
     computerValuesElem.classList.remove('hidden')
     console.log("Here we go")
     computerPastPositionElem.textContent = `Computer's Past Position was ${99-computerPosition+1}`
@@ -200,7 +197,6 @@ function otherPlayerDice(){
         }
     else{
         computerPosition = computerPosition
-        console.log("you sould get less points to reach exactly 100")
     }
     // console.log("it is at "+(computerPosition+1) + " position" )
     reachedValue = computerPosition +1
@@ -210,29 +206,25 @@ function otherPlayerDice(){
     computerOutputElem.textContent = `Computer's Dice Output is ${computerDiceOutput}`
     computerCurrentPositionElem.textContent = `Computer's Current Position is ${99- computerPosition +1}`
     if (playerWin || playerLose)
-    // setTimeout(endGame() , 1000)
     endGame()
 }
 
 //  this function will be run to get a rando number between 1 -6 
 function diec(){
-    // computer-values
-
     computerValuesElem.classList.add('hidden')
     playerValuesElem.classList.remove('hidden')
     ladder = false
     snake = false
     computerMessageElem.textContent = ""
     playerMessageElem.textContent = ""
-    // let printingPastPosition = playerPosition
     pastPositionElem.textContent = `Your Past Position was ${99-playerPosition+1}`
     removeCharacter();
     diceOutput = Math.floor(Math.random() * 6) + 1
     if ((playerPosition+diceOutput+1)<=numberOfCells){
-        console.log("expected result: "+(playerPosition+diceOutput+1))
-        console.log(playerPosition+1)
+        // console.log("expected result: "+(playerPosition+diceOutput+1))
+        // console.log(playerPosition+1)
         playerPosition += diceOutput
-        console.log(playerPosition+1)
+        // console.log(playerPosition+1)
         if((playerPosition+1) === 100 ){
             playerWin = true
         }
@@ -242,16 +234,7 @@ function diec(){
         console.log("when There are less steps"+playerPosition+1)
         console.log("you sould get less points to reach exactly 100")
     }
-    // console.log("it is at "+(playerPosition+1) + " position" )
-    // let printingCurrentPosition = playerPosition +1
-
     
-   
-    // if (playerWin || playerLose){
-    //     // setTimeout(endGame() , 1000)
-    //     endGame()
-    // }
-    // else{
     reachedValue = playerPosition +1
     goingDown();
     goingUp();
@@ -301,17 +284,21 @@ function endGame(){
     diceElem.removeEventListener('click', play); 
     computerValuesElem.classList.add('hidden')
     playerValuesElem.classList.add('hidden')
+    diceElem.classList.add('hidden')
     if(playerWin){
     // alert("The game is ended, your a Winner")
     playerMessageElem.style.fontWeight = "bold"
+    playerMessageElem.style.color = 'rgba(21, 181, 31, 1)'
     playerMessageElem.textContent = "The game is ended, your a Winner"
     }
-    if(playerLose){
+    else if(playerLose){
     // alert("The game is ended, your Lose")
     playerMessageElem.style.fontWeight = "bold"
+    playerMessageElem.style.color = 'rgba(255, 55, 0, 1)'
     computerMessageElem.textContent = "The game is ended, your Lose"
-
     }
+
+    restartElem.classList.remove('hidden')
 
     // if(playerWin || playerLose){
     // addCharacter()
@@ -322,41 +309,45 @@ function endGame(){
     // scoreElem.textContent = "Your score is 0"
 }
 
-function play(event){
-    if(event.target.classList.contains('diec')){
-        // if(playerTurn)
-            diec()
-            // playerTurn = false
-            // computerTurn = true
+    function restart(){
+        if(playerWin){
+            playerMessageElem.textContent = "The Game has been restart"
+            playerMessageElem.style.color = "blue"
         }
-    // otherPlayerDice()
+        else if (playerLose){
+        computerMessageElem.textContent = "The Game has been restart"
+        computerMessageElem.style.color = "blue"
+        }
 
-    
+        restartElem.classList.add('hidden')
+        removeCharacter()
+        removeComputer()
+        playerPosition = 0
+        computerPosition = 0
+        playerWin = false
+        playerLose = false
+        ladder = false
+        snake = false
+        // playerMessageElem.classList.add('hidden')
+        // computerMessageElem.classList.add('hidden')
+        addCharacter()
+        addComputer()
+        diceElem.classList.remove('hidden')
+        diceElem.addEventListener('click', play); 
+        // createGrid();
+            
+
+    }
+
+function play(event){
+    computerMessageElem.style.color = "black"
+    playerMessageElem.style.color = "black"
+
+    if(event.target.classList.contains('diec')){
+            diec()
+        }
 }
 
-// function computer(){
-
-//     if (computerTurn){
-//         otherPlayerDice()
-//         computerTurn = false
-//         playerTurn = true
-//     }
-// }
-
-// function play(event){
-//     if(playerPosition){
-//     if(event.target.classList.contains('diec')){
-//             diec()
-//             computerTurn = true
-//             playerTurn = false
-//         }
-//         else if (computerTurn){
-//         otherPlayerDice()
-//         computerTurn = false
-//         playerTurn = true
-//     }
-    
-// }
 
 // Adding one character like the duck, and this character that will move over the game 
 
@@ -369,7 +360,6 @@ function createGrid(){
 //    running the loop 100 times, then create div 100 rimes and add them to the grid class
     
 let reverseCount = 0
-// const reversedRow = []
 const tempCells = []
 let count = 1
 for (let i=100 ; i>=1; i--){
@@ -404,7 +394,6 @@ for (let i=100 ; i>=1; i--){
         if(reverseCount % 10 === 0 ){
             count++
             let reversedRow = tempCells.map( cell => cell)
-            // console.log(reversedRow)
             tempCells.splice(0, tempCells.length);
             reversedRow.forEach(cell => {
                 row.appendChild(cell)
@@ -422,21 +411,8 @@ for (let i=100 ; i>=1; i--){
 
 createGrid()
 
-// play()
-// while(true){
-//     if (playerTurn){
 diceElem.addEventListener('click', play);
-
-//             computerTurn = true
-//             playerTurn = false
-//         }
-    // if (computerTurn){
-    //     otherPlayerDice()
-    //     computerTurn = false
-    //     playerTurn = true
-    // }}
-// diceElem.addEventListener('click', play);
-
+restartElem.addEventListener('click' , restart)
 }
 
 

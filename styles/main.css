@@ -31,34 +31,6 @@ h1{
     
 } */
 
-.largerSnake{
-    position:absolute;
-    /* padding: 100px; */
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-
-
-    /* justify-content: center; */
-    /* justify-content: right;
-     */
-     /* right: 18em; */
-     /* bottom: -18em; */
-     /* /* top: 32.5em; */
-  /* left: 15em;  */
-  /* bottom: 5em; */
-   height: 500px; 
-    /* text-align: center; */
-}
-
-.container{
-    /* align-content: center; */
-    /* display: flex; */
-        /* display: flex; */
-    /* text-align: center; */
-    /* align-content: center; */
-    /* justify-content: center; */
-}
 
 .cell {
     width: 9.9%;
@@ -67,19 +39,10 @@ h1{
     text-align:center;
     line-height: 66px;
     font-size: 35px;
-  /* height: 200px; */
-    /* vertical-align:baseline */
-    /* position: relative; */
-    /* justify-content: end; */
-    /* align-items:end; */
 }
 
 .computer-values{
-    /* justify-content: right; */
     text-align: center;  
-        /* display: none; */
-  
-
 }
 
 .player-values{
@@ -99,47 +62,18 @@ h1{
 
 .row  {
     display: flex;
-    /* flex-direction: row-reverse; */
 }
 
 .reverse {
     flex-direction: row-reverse;
 }
 
-.diec{
-    /* height: 400px; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* align-self: center; */
-    /* justify-content:; */
+/* .diec{
 
-    /* padding:  */
-    /* margin: 20px; */
-    /* align-items: center; */
-    /* align-content: center; */
-    /* text-align: center; */
-  /* display: block; */
-  /* margin: auto;
-  width: 50%; */
-  /* float:right;
-  display: flex;
-  justify-content: c; */
-
-  /* float:rigaht; */
-  /* right:0px; */
-/* 
-  /* height: 20em; */
-  /* position: relative; */
-  /* width: 15em;  */
-  
-  /* border: 2px 2px 2px 2px; */
-  /* position: relative; */
-    
-
-}
+} */
 
 .dice-div{
-    width: 20%;
+    width: 30%;
     float: right;
     box-sizing:border-box;
 }
@@ -147,12 +81,7 @@ h1{
 
 
 .computer{
-    /* background-image: url('../assets/girl-pixel.gif'); */
     background-image: url('../assets/andrew.gif');
-    /* background-image: url('../assets/girl-pixel.gif'); */
-    /* by this background size: this will let the image be within the div size */
-    /* background-size: contain; */
-    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -161,36 +90,32 @@ h1{
 
 
 .grid-wrapper{
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* margin: 50%; */
-    /* height: ; */
     width: 70%;
     height: 100%;
-    /* width: 130em; */
-    /* display:block; */
     display: flex;
     flex-wrap: wrap; 
     flex-direction:column;
-    /* flex: 1 0 0; */
-    /* flex-direction:initial; */
-    /* flex-grow: inherit; */
-    /* border: 5px solid red; */
-    /* font-size: smaller; */
-    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-    /* font-size: 90px; */
-    /* background-color: blue; */
+    position: relative;
+}
+
+.grid{
+    position: relative;
+}
+
+.largerSnake{
+    position:absolute;
+    /* padding: 100px; */
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+   height: 500px; 
 }
 
 .small-container{
     display: flex;
-    /* flex-wrap: wrap; */
-    /* text-align: center; */
-    /* align-items: start; */
     justify-content: center;
-    /* align-items: ; */
     margin: 100px 0px 200px 50px;
-    width: 69%;
+    width: 65%;
     float: left;
     position: relative;
     box-sizing:border-box;
@@ -205,104 +130,33 @@ h1{
 
 .grid{
     text-align: center;
-    /* font-size: 1px; */
-    /* position: absolute; */
-    /* justify-content: left; */
 
-    /* text-align: left; */
-    /* justify-content: right; */
 }
 
 
 .message-dice {
-    /* display: flex; */
-    /* position: relative; */
-    /* justify-content: center; */
-    /* align-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
-    /* text-align: center; */
-    /* padding: 60px; */
     float: left;
     font-size: 30px;
     position: relative;
     text-align: center;
-    width: 25%;
+    width: 30%;
     font-weight: bolder;
 }
 
 
 .player-values, .computer-values{
     /* justify-content: right; */
-    width: 25%;
+    width: 30%;
     float:right;
     position: relative;
     box-sizing:border-box;
+    font-size: 23px;
 }
 
-/* @media screen and (min-width: 900px) {
-     
-    #container {
-        align-items: center;
-        justify-content: center;
-    } */
-
-    /* .grid-wrapper{
-
-    } */
-    /* .grid{  */
-    /* width: 600px;;
-    height: 600px; */
-    /* border: 1px solid black; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* margin: 60px;  */
-    /* align-items:center; */
-    
-/* } 
 
 
-
-.grid div {
-    width: 9.64%;
-    height: 9.65%;
-    border: 1px solid black;
-    text-align:center;
-    line-height: 66px;
-    font-size: 36px;
-  /* height: 200px; */
-    /* vertical-align:baseline */
-    /* position: relative; */
-    /* justify-content: end; */
-    /* align-items:end; */
-/* } */
-  /* } */ 
-
-/* @media screen and (min-width: 1920px) {
-          .grid{
-    width: 700px;;
-    height: 7000px;
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 60px;
-    align-items: center;
+#restart{
+    padding: 20px;
+    width: auto;
+    font-size: 50px;
 }
-  } */
-
-
-/*   
-@media (max-width: 767px) {
-    #container {
-        align-items: center;
-        justify-content: center;
-    }
-    .grid{
-    width: 600px;;
-    height: 600px;
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 60px;
-    align-items: center;
-} */
