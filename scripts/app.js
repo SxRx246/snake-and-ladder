@@ -385,7 +385,7 @@ for (let i=100 ; i>=1; i--){
         cell.textContent = i
 
         if(i%2 === 0)
-            cell.style.backgroundColor = "rgb(128, 255, 0)"
+            cell.style.backgroundColor = "rgba(31, 224, 227, 1)"
         else
             cell.style.backgroundColor = "rgb(255, 132, 0)"
 
