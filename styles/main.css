@@ -1,18 +1,58 @@
 body{
     align-items: center;
-    font-size: 40px;
+    font-size: 25px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
     /* font-family: "Raleway"; */
     /* text-shadow: 4px 4px 5px rgb(136, 255, 0); */
+    /* background-color: rgb(230, 0, 255); */
+    /* display: flex;
+    justify-content: center; */
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
 }
 
 .character {
-    background-image: url('../assets/boyCharacter.png');
+    /* background-image: url('../assets/boyCharacter.png'); */
+    background-image: url('../assets/girl-pixel.gif');
     /* by this background size: this will let the image be within the div size */
-    background-size: contain;
+    /* background-size: contain; */
     /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     background-position: center;
+}
+
+/* .computer-size{
+    
+} */
+
+.LargerSnake{
+    position:absolute;
+    /* padding: 100px; */
+    display: flex;
+    /* justify-content: right;
+     */
+     /* right: 18em; */
+     /* bottom: -18em; */
+     /* /* top: 32.5em; */
+  /* left: 15em;  */
+  /* bottom: 5em; */
+   height: 500px; 
+    /* text-align: center; */
+}
+
+.container{
+    /* align-content: center; */
+    /* display: flex; */
+        /* display: flex; */
+    /* text-align: center; */
+    /* align-content: center; */
+    /* justify-content: center; */
 }
 
 .cell {
@@ -21,12 +61,35 @@ body{
     border: 1px solid black;
     text-align:center;
     line-height: 66px;
-    font-size: 36px;
+    font-size: 35px;
   /* height: 200px; */
     /* vertical-align:baseline */
     /* position: relative; */
     /* justify-content: end; */
     /* align-items:end; */
+}
+
+.computer-values{
+    /* justify-content: right; */
+    text-align: center;  
+        /* display: none; */
+  
+
+}
+
+.player-values{
+    /* justify-content: right; */
+    text-align: center;
+        /* display: none; */
+
+
+}
+.player-values img{
+    height: 250px;
+}
+
+.hidden{
+    display: none;
 }
 
 .row  {
@@ -39,40 +102,151 @@ body{
 }
 
 .diec{
-    height: 200px;
+    /* height: 400px; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* align-self: center; */
+    /* justify-content:; */
+
     /* padding:  */
-    margin: 20px;
-    align-items: center;
+    /* margin: 20px; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* text-align: center; */
+  /* display: block; */
+  /* margin: auto;
+  width: 50%; */
+  /* float:right;
+  display: flex;
+  justify-content: c; */
+
+  /* float:rigaht; */
+  /* right:0px; */
+/* 
+  /* height: 20em; */
+  /* position: relative; */
+  /* width: 15em;  */
+  
+  /* border: 2px 2px 2px 2px; */
+  /* position: relative; */
+    
 
 }
 
+.dice-div{
+    width: 20%;
+    float: right;
+    box-sizing:border-box;
+}
+
+
+
 .computer{
-    background-image: url('../assets/computer.jpg');
+    /* background-image: url('../assets/girl-pixel.gif'); */
+    background-image: url('../assets/andrew.gif');
+    /* background-image: url('../assets/girl-pixel.gif'); */
     /* by this background size: this will let the image be within the div size */
-    background-size: contain;
+    /* background-size: contain; */
     /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     background-position: center;
 }
 
 
-/* 
-@media screen and (min-width: 900px) {
+
+.grid-wrapper{
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin: 50%; */
+    height: 50%;
+    width: 70%;
+    /* border: 5px solid red; */
+    /* font-size: smaller; */
+    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* font-size: 90px; */
+    /* background-color: blue; */
+}
+
+.small-container{
+    display: flex;
+    /* text-align: center; */
+    /* align-items: start; */
+    justify-content: center;
+    /* align-items: ; */
+    margin: 100px 0px 200px 50px;
+    width: 72%;
+    float: left;
+    position: relative;
+    box-sizing:border-box;
+}
+
+
+.computer-size{
+    height: 260px;
+    width: 260px;
+    padding: 30px;
+}
+
+.grid{
+    text-align: center;
+    /* font-size: 1px; */
+    /* position: absolute; */
+    /* justify-content: left; */
+
+    /* text-align: left; */
+    /* justify-content: right; */
+}
+
+
+.message-dice {
+    /* display: flex; */
+    /* position: relative; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    /* text-align: center; */
+    /* padding: 60px; */
+    float: left;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    width: 25%;
+    font-weight: bolder;
+}
+
+
+.player-values, .computer-values{
+    /* justify-content: right; */
+    width: 25%;
+    float:right;
+    position: relative;
+    box-sizing:border-box;
+}
+
+/* @media screen and (min-width: 900px) {
      
     #container {
         align-items: center;
         justify-content: center;
-    }
-    .grid{
-    width: 600px;;
-    height: 600px;
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 60px;
-    align-items: center;
-}
+    } */
+
+    /* .grid-wrapper{
+
+    } */
+    /* .grid{  */
+    /* width: 600px;;
+    height: 600px; */
+    /* border: 1px solid black; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* margin: 60px;  */
+    /* align-items:center; */
+    
+/* } 
+
+
 
 .grid div {
     width: 9.64%;

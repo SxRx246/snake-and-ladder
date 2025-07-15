@@ -31,6 +31,8 @@ const diceOutputElem = document.querySelector("#dice-output")
 const computerOutputElem = document.querySelector('#computer-dice-output');
 const computerMessageElem = document.querySelector('#computer-message');
 const playerMessageElem = document.querySelector('#player-message');
+const computerValuesElem = document.querySelector(".computer-values")
+const playerValuesElem = document.querySelector(".player-values")
 
 
 
@@ -180,6 +182,13 @@ function computerGoingUp() {
 function otherPlayerDice(){
     // ladder = false
     // snake = false
+    setTimeout(add(playerValuesElem),3000)
+    remove(computerValuesElem)
+    
+    // setTimeout(remove(computerMessageElem),1)
+    // setTimeout(remove(computerMessageElem),1)
+    computerValuesElem.classList.remove('hidden')
+    console.log("Here we go")
     computerPastPositionElem.textContent = `Computer's Past Position was ${99-computerPosition+1}`
 
     removeComputer();
@@ -200,10 +209,17 @@ function otherPlayerDice(){
     addComputer()
     computerOutputElem.textContent = `Computer's Dice Output is ${computerDiceOutput}`
     computerCurrentPositionElem.textContent = `Computer's Current Position is ${99- computerPosition +1}`
+    if (playerWin || playerLose)
+    // setTimeout(endGame() , 1000)
+    endGame()
 }
 
 //  this function will be run to get a rando number between 1 -6 
 function diec(){
+    // computer-values
+
+    computerValuesElem.classList.add('hidden')
+    playerValuesElem.classList.remove('hidden')
     ladder = false
     snake = false
     computerMessageElem.textContent = ""
@@ -217,7 +233,7 @@ function diec(){
         console.log(playerPosition+1)
         playerPosition += diceOutput
         console.log(playerPosition+1)
-        if((playerPosition) === 100 ){
+        if((playerPosition+1) === 100 ){
             playerWin = true
         }
     }
@@ -231,11 +247,11 @@ function diec(){
 
     
    
-    if (playerWin || playerLose){
-        // setTimeout(endGame() , 1000)
-        endGame()
-    }
-    else{
+    // if (playerWin || playerLose){
+    //     // setTimeout(endGame() , 1000)
+    //     endGame()
+    // }
+    // else{
     reachedValue = playerPosition +1
     goingDown();
     goingUp();
@@ -250,29 +266,56 @@ function diec(){
 
     ladder = false
     snake = false
+    if (playerWin || playerLose)
+    // setTimeout(endGame() , 1000)
+    endGame()
+    else{
+        // remove()
 
-    setTimeout(otherPlayerDice, 500)
+    setTimeout(otherPlayerDice, 3000)
+
+    // setTimeout((playerValuesElem.classList.add('hidden')), 10000)
+    // computerValuesElem.classList.add('hidden')
+    // setTimeout(computerValuesElem.classList.remove('hidden'),20000)
+    // computerValuesElem.classList.remove('hidden')
     if(ladder)
         computerMessageElem.textContent = `The Computer Went UP Because of the Ladder at ${reachedValue}`
     else if (snake)
         computerMessageElem.textContent = `The Computer Went Down Because of the Snake at ${reachedValue}`
 }
-    if (playerWin || playerLose){
-        // setTimeout(endGame() , 1000)
-        endGame()
-    }
+// }
+    // if (playerWin || playerLose){
+    //     // setTimeout(endGame() , 1000)
+    //     endGame()
+    // }
 }
 
+    function add(Elem){
+        setTimeout(Elem.classList.add('hidden'))
+    }
+    function remove(Elem){
+        setTimeout(Elem.classList.remove('hidden'))
+    }
+
 function endGame(){
-    if(playerWin)
-    alert("The game is ended, your a Winner")
-    if(playerLose)
-    alert("The game is ended, your Lose")
+    diceElem.removeEventListener('click', play); 
+    computerValuesElem.classList.add('hidden')
+    playerValuesElem.classList.add('hidden')
+    if(playerWin){
+    // alert("The game is ended, your a Winner")
+    playerMessageElem.style.fontWeight = "bold"
+    playerMessageElem.textContent = "The game is ended, your a Winner"
+    }
+    if(playerLose){
+    // alert("The game is ended, your Lose")
+    playerMessageElem.style.fontWeight = "bold"
+    computerMessageElem.textContent = "The game is ended, your Lose"
+
+    }
 
     // if(playerWin || playerLose){
-    addCharacter()
+    // addCharacter()
     // addComputer()
-    diceElem.removeEventListener('click', play); 
 // }
 
     // score = 0
@@ -340,6 +383,12 @@ for (let i=100 ; i>=1; i--){
         reverseCount++
        
         cell.textContent = i
+
+        if(i%2 === 0)
+            cell.style.backgroundColor = "rgb(128, 255, 0)"
+        else
+            cell.style.backgroundColor = "rgb(255, 132, 0)"
+
 
         
         snakesPositions.forEach(snakesPosition => {

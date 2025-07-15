@@ -7,35 +7,52 @@
     <title>Snake and Ladder</title>
     <script src="scripts/app.js"></script>
     <link rel="stylesheet" href="styles/main.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,368;1,368&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet"></head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <body>
     <!-- <div class="full-container" style="background-color: black; display: ;"> -->
-        <!-- <div class="board"></div> -->
-        <div id="container">
-            <div class="player-values">
-                <p id="past-position">Your Past Position was 1</p>
-                <p id="dice-output">Your Dice Output is 0</p>
-                <p id="current-position">Your Current Position is 1</p>
-                <p id="player-message"></p>
-            </div>
+    <!-- <div class="board"></div> -->
+    <header>
+        <h1>Snake & Ladder</h1>
+    </header>
+    <div id="container">
+        <div class="dice-div">
+            <img class="diec" src="assets/dice-gif.gif" alt="white-diec">
+        </div>
+        <div class="small-container">
             <div class="grid-wrapper">
-                <div class="grid"></div>
+                <div class="grid">
+                    <img src="assets\snakes-big-last.png" alt="big snake" class="LargerSnake">
+                </div>
             </div>
-            <!-- <div class=""></div> -->
+        </div>
+        <div class="player-values hidden">
+            <img src="assets/girl-pixel.gif" alt="My Character">
+            <p id="past-position">Your Past Position was 1</p>
+            <p id="dice-output">Your Dice Output is 0</p>
+            <p id="current-position">Your Current Position is 1</p>
+        </div>
+        <!-- <hr> -->
+        <div class="computer-values hidden">
+            <img src="assets/andrew.gif" alt="" class="computer-size">
+            <p id="computer-past-position">Computer's Past Position was 1</p>
+            <p id="computer-dice-output">Computer's Dice Output is 0</p>
+            <p id="computer-current-position">Computer's Current Position is 1</p>
+        </div>
+
+        <div class="message-dice">
+            <p id="player-message"></p>
+            <p id="computer-message"></p>
+            <br>
             <audio id="congrats" src="assets\you-win-sequence-2-183949.mp3"></audio>
-            <img class="diec" src="assets\white-dice.avif" alt="white-diec">
+        </div>
+        <!-- <hr> -->
+        <div></div>
 
-            <div class="computer-values">
-                <p id="computer-past-position">Computer's Past Position was 1</p>
-                <p id="computer-dice-output">Computer's Dice Output is 0</p>
-                <p id="computer-current-position">Computer's Current Position is 1</p>
-                <p id="computer-message"></p>
-            </div>
 
-        <!-- </div> -->
+
+    </div>
 </body>
 
 </html>
