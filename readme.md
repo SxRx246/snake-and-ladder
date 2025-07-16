@@ -23,7 +23,7 @@ my plan and functions:
     Let  snakesPositions = [10,22,30,47,.....]
 
     Function goingDown(){
-    snakePositions.foreach (snakePosition =>  if(playerPosition === snakePosition  == 10) {
+    snakesPositions.foreach (snakePosition =>  if(playerPosition === snakePosition  == 10) {
         PlayerPosition  = 1
     }
     Else if (playerPosition === snakePosition  == 22) {
@@ -59,4 +59,7 @@ my plan and functions:
 
     Adding one character like the duck, and this character that will move over the game 
 
+
+
+I will work on snake 57
 

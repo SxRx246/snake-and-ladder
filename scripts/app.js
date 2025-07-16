@@ -11,8 +11,8 @@ const numberOfCells = gridWidth * gridWidth
 
 let playerPosition = 0
 let computerPosition = 0
-let snakesPositions = [12, 51, 79, 85, 95]
-let ladderPositions = [3, 19, 27, 43, 53, 70]
+let snakesPositions = [12, 51, 55, 79, 85, 82]
+let ladderPositions = [3, 19, 27, 48, 76, 70]
 let playerWin = false
 let playerLose = false
 let diceOutput
@@ -34,6 +34,20 @@ const playerMessageElem = document.querySelector('#player-message');
 const computerValuesElem = document.querySelector(".computer-values")
 const playerValuesElem = document.querySelector(".player-values")
 const restartElem = document.querySelector('#restart')
+const snake13Elem = document.querySelector('.snake-13')
+const snake52Elem = document.querySelector('.snake-52')
+const snake56Elem = document.querySelector('.snake-56')
+const snake80Elem = document.querySelector('.snake-80')
+const snake86Elem = document.querySelector('.snake-86')
+const snake83Elem = document.querySelector('.snake-83')
+const snakeLastRowElem = document.querySelector('.snake-last-row')
+
+const ladder4Elem = document.querySelector('.ladder-4')
+const ladder20Elem = document.querySelector('.ladder-20')
+const ladder28Elem = document.querySelector('.ladder-28')
+const ladder44Elem = document.querySelector('.ladder-44')
+const ladder70Elem = document.querySelector('.ladder-70')
+const ladder77Elem = document.querySelector('.ladder-77')
 // console.log(restartElem)
 
 
@@ -60,25 +74,29 @@ function removeComputer(){
 
 // if the player locatoion and ladder Position is the same, he will go up
 function goingDown() {
-snakesPositions.forEach(snakesPosition => {
-        if (playerPosition === 12 && snakesPosition === 12) {
+snakesPositions.forEach(snakePosition => {
+        if (playerPosition === 12 && snakePosition === 12) {
             playerPosition = 6
             snake = true
         }
-        else if (playerPosition === 51 && snakesPosition === 51) {
+        else if (playerPosition === 51 && snakePosition === 51) {
             playerPosition = 47
             snake = true
         }
-        else if (playerPosition === 79 && snakesPosition === 79) {
+        else if (playerPosition === 55 && snakePosition === 55) {
+            playerPosition = 22
+            snake = true
+        }
+        else if (playerPosition === 79 && snakePosition === 79) {
             playerPosition = 75
             snake = true
 
         }
-        else if (playerPosition === 85 && snakesPosition === 85) {
+        else if (playerPosition === 85 && snakePosition === 85) {
             playerPosition = 14
             snake = true
         }
-        else if (playerPosition === 95 && snakesPosition === 95) {
+        else if (playerPosition === 82 && snakePosition === 82) {
             playerPosition = 62
             snake = true
         }
@@ -88,24 +106,28 @@ snakesPositions.forEach(snakesPosition => {
 
 
 function computerGoingDown() {
-snakesPositions.forEach(snakesPosition => {
-        if (computerPosition === 12 && snakesPosition === 12) {
+snakesPositions.forEach(snakePosition => {
+        if (computerPosition === 12 && snakePosition === 12) {
             computerPosition = 6
             snake = true
         }
-        else if (computerPosition === 51 && snakesPosition === 51) {
+        else if (computerPosition === 51 && snakePosition === 51) {
             computerPosition = 47
             snake = true
         }
-        else if (computerPosition === 79 && snakesPosition === 79) {
+        else if (computerPosition === 55 && snakePosition === 55) {
+            computerPosition = 22
+            snake = true
+        }
+        else if (computerPosition === 79 && snakePosition === 79) {
             computerPosition = 75
             snake = true
         }
-        else if (computerPosition === 85 && snakesPosition === 85) {
+        else if (computerPosition === 85 && snakePosition === 85) {
             computerPosition = 14
             snake = true
         }
-        else if (computerPosition === 95 && snakesPosition === 95) {
+        else if (computerPosition === 82 && snakePosition === 82) {
             computerPosition = 62
             snake = true
         }
@@ -129,16 +151,16 @@ function goingUp() {
             ladder = true
         }
 
-        else if (playerPosition === 43 && ladderPosition === 43) {
-            playerPosition = 55
-            ladder = true
-        }
-        else if (playerPosition === 53 && ladderPosition === 53) {
-            playerPosition = 72
+        else if (playerPosition === 48 && ladderPosition === 48) {
+            playerPosition = 52
             ladder = true
         }
         else if (playerPosition === 70 && ladderPosition === 70) {
             playerPosition = 90
+            ladder = true
+        }
+        else if (playerPosition === 76 && ladderPosition === 76) {
+            playerPosition = 84
             ladder = true
         }
     })
@@ -162,17 +184,17 @@ function computerGoingUp() {
 
         }
 
-        else if (computerPosition === 43 && ladderPosition === 43) {
-            computerPosition = 55
+        else if (computerPosition === 48 && ladderPosition === 48) {
+            computerPosition = 52
             ladder = true
 
         }
-        else if (computerPosition === 53 && ladderPosition === 53) {
-            computerPosition = 72
-            ladder = true
-        }
         else if (computerPosition === 70 && ladderPosition === 70) {
             computerPosition = 90
+            ladder = true
+        }
+        else if (computerPosition === 76 && ladderPosition === 76) {
+            computerPosition = 84
             ladder = true
         }
     })
@@ -185,7 +207,6 @@ function otherPlayerDice(){
     remove(computerValuesElem)
 
     computerValuesElem.classList.remove('hidden')
-    console.log("Here we go")
     computerPastPositionElem.textContent = `Computer's Past Position was ${99-computerPosition+1}`
 
     removeComputer();
@@ -207,6 +228,10 @@ function otherPlayerDice(){
     computerCurrentPositionElem.textContent = `Computer's Current Position is ${99- computerPosition +1}`
     if (playerWin || playerLose)
     endGame()
+    else if(computerDiceOutput === 6){
+        computerMessageElem.textContent = "The other player will have another roll bacause he got 6 in his first roll"
+        setTimeout(otherPlayerDice() , 3000)
+    }
 }
 
 //  this function will be run to get a rando number between 1 -6 
@@ -231,8 +256,7 @@ function diec(){
     }
     else{
         playerPosition= playerPosition
-        console.log("when There are less steps"+playerPosition+1)
-        console.log("you sould get less points to reach exactly 100")
+        // console.log("when There are less steps"+playerPosition+1)
     }
     
     reachedValue = playerPosition +1
@@ -252,10 +276,13 @@ function diec(){
     if (playerWin || playerLose)
     // setTimeout(endGame() , 1000)
     endGame()
+    else if(diceOutput === 6){
+        playerMessageElem.textContent = "You have another roll bacause you got 6 in you first roll, please click on the dice again"
+        setTimeout(play() , 3000)
+    }
     else{
-        // remove()
-
-    setTimeout(otherPlayerDice, 3000)
+        // remove() 
+    setTimeout(otherPlayerDice, 4000)
 
     // setTimeout((playerValuesElem.classList.add('hidden')), 10000)
     // computerValuesElem.classList.add('hidden')
@@ -293,9 +320,10 @@ function endGame(){
     }
     else if(playerLose){
     // alert("The game is ended, your Lose")
-    playerMessageElem.style.fontWeight = "bold"
-    playerMessageElem.style.color = 'rgba(255, 55, 0, 1)'
+    computerMessageElem.style.fontWeight = "bold"
+    computerMessageElem.style.color = 'rgba(255, 55, 0, 1)'
     computerMessageElem.textContent = "The game is ended, your Lose"
+    // playerMessageElem
     }
 
     restartElem.classList.remove('hidden')
@@ -363,6 +391,7 @@ let reverseCount = 0
 const tempCells = []
 let count = 1
 for (let i=100 ; i>=1; i--){
+        let countforSnakesandLadders = 101 - i
         // (1)thats will create 100 div
         const cell = document.createElement('div')
         cell.classList.add("cell")
@@ -402,6 +431,54 @@ for (let i=100 ; i>=1; i--){
             });
             gridElem.appendChild(row) 
         }        
+
+
+        if(cell.innerText === "27"){
+            cell.appendChild(snake13Elem)
+        }
+        else if(cell.innerText === "68"){
+            cell.appendChild(snake52Elem)
+        }
+        else if(cell.innerText === "62"){
+            cell.appendChild(snake56Elem)
+        }
+        else if(cell.innerText === "39"){
+            cell.appendChild(snake80Elem)
+        }
+        else if(cell.innerText === "95"){
+            cell.appendChild(snake86Elem)
+        }
+        else if(cell.innerText === "100"){
+            cell.appendChild(snake83Elem)
+        }
+        // else if(cell.innerText === ""){
+        //     cell.appendChild(snakeLastRowElem)        
+        // }
+
+        
+
+
+
+
+// Ladders:
+        if(cell.innerText === "24"){
+            cell.appendChild(ladder4Elem)
+        }
+        else if(cell.innerText === "42"){
+            cell.appendChild(ladder20Elem)
+        }
+        else if(cell.innerText === "85"){
+            cell.appendChild(ladder28Elem)
+        }
+        else if(cell.innerText === "68"){
+            cell.appendChild(ladder44Elem)
+        }
+        else if(cell.innerText === "92"){
+            cell.appendChild(ladder70Elem)
+        }
+        else if(cell.innerText === "97"){
+            cell.appendChild(ladder77Elem)
+        }
     }
 
     addCharacter()

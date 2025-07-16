@@ -1,8 +1,8 @@
-body{
+body {
     align-items: center;
     font-size: 25px;
     /* font-family: 'Courier New', Courier, monospace; */
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     /* font-family: "Raleway"; */
     /* text-shadow: 4px 4px 5px rgb(136, 255, 0); */
@@ -11,7 +11,7 @@ body{
     justify-content: center; */
 }
 
-h1{
+h1 {
     font-size: 100px;
     text-align: center;
 }
@@ -36,31 +36,32 @@ h1{
     width: 9.9%;
     height: 9.65%;
     border: 1px solid black;
-    text-align:center;
+    text-align: center;
     line-height: 66px;
     font-size: 35px;
 }
 
-.computer-values{
-    text-align: center;  
+.computer-values {
+    text-align: center;
 }
 
-.player-values{
+.player-values {
     /* justify-content: right; */
     text-align: center;
-        /* display: none; */
+    /* display: none; */
 
 
 }
-.player-values img{
+
+.player-values img {
     height: 250px;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.row  {
+.row {
     display: flex;
 }
 
@@ -72,15 +73,15 @@ h1{
 
 } */
 
-.dice-div{
+.dice-div {
     width: 30%;
     float: right;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 
 
-.computer{
+.computer {
     background-image: url('../assets/andrew.gif');
     background-repeat: no-repeat;
     background-size: cover;
@@ -89,46 +90,154 @@ h1{
 
 
 
-.grid-wrapper{
+.grid-wrapper {
     width: 70%;
     height: 100%;
     display: flex;
-    flex-wrap: wrap; 
-    flex-direction:column;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
+    /* background-image: url(../assets/snakes-ladder-edited.png); */
+
 }
 
-.grid{
-    position: relative;
-}
 
-.largerSnake{
-    position:absolute;
+
+.snake-86 {
+    position: absolute;
     /* padding: 100px; */
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
-   height: 500px; 
+    height: 550px;
+    transform: rotate(-0.005turn);
+    /* right:10em; */
+    /* left:6em; */
+    /* bottom: 2.6em; */
+    /* opacity: 0.6; */
+
 }
 
-.small-container{
+.snake-13 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90px;
+    height: 140px;
+    transform: rotate(0.01turn);
+
+}
+
+.snake-52 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 110px;
+}
+.snake-56 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 240px;
+}
+
+.snake-83 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 180px;
+    transform: rotate(0.15turn);
+
+}
+.snake-80 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 180px;
+    transform: rotate(0.15turn);
+}
+
+/* .snake-last-row{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 180px;
+    /* transform: rotate(0.15turn);   */
+/* }  */
+
+.ladder-4 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 130px;
+}
+
+.ladder-20 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    transform: rotate(0.08turn);
+    height: 190px;
+}
+
+.ladder-28 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+    width: 100px;
+    transform: rotate(-0.11turn);
+
+}
+
+.ladder-44 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 130px;
+    width: 100px;
+    transform: rotate(-0.19turn);
+
+}
+
+.ladder-70 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 190px;
+    width: 140px;
+    transform: rotate(-0.08turn);
+
+}
+
+.ladder-77 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 140px;
+    width: 100px;
+}
+
+
+
+.small-container {
     display: flex;
     justify-content: center;
     margin: 100px 0px 200px 50px;
     width: 65%;
     float: left;
     position: relative;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 
-.computer-size{
+.computer-size {
     height: 260px;
     width: 260px;
     padding: 30px;
 }
 
-.grid{
+.grid {
     text-align: center;
 
 }
@@ -144,19 +253,27 @@ h1{
 }
 
 
-.player-values, .computer-values{
+.player-values,
+.computer-values {
     /* justify-content: right; */
     width: 30%;
-    float:right;
+    float: right;
     position: relative;
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-size: 23px;
 }
 
 
 
-#restart{
+#restart {
     padding: 20px;
     width: auto;
     font-size: 50px;
+}
+
+.grid {
+    position: relative;
+    /* background-image: url(../assets/snakes-ladder-edited.png); */
+
+
 }
