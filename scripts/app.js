@@ -27,6 +27,7 @@ const computerCurrentPositionElem = document.querySelector('#computer-current-po
 const pastPositionElem = document.querySelector('#past-position')
 const computerPastPositionElem = document.querySelector('#computer-past-position')
 const diceElem = document.querySelector('.diec');
+const diceDivElem = document.querySelector('.dice-div')
 const diceOutputElem = document.querySelector("#dice-output")
 const computerOutputElem = document.querySelector('#computer-dice-output');
 const computerMessageElem = document.querySelector('#computer-message');
@@ -40,7 +41,6 @@ const snake56Elem = document.querySelector('.snake-56')
 const snake80Elem = document.querySelector('.snake-80')
 const snake86Elem = document.querySelector('.snake-86')
 const snake83Elem = document.querySelector('.snake-83')
-const snakeLastRowElem = document.querySelector('.snake-last-row')
 
 const ladder4Elem = document.querySelector('.ladder-4')
 const ladder20Elem = document.querySelector('.ladder-20')
@@ -48,6 +48,17 @@ const ladder28Elem = document.querySelector('.ladder-28')
 const ladder44Elem = document.querySelector('.ladder-44')
 const ladder70Elem = document.querySelector('.ladder-70')
 const ladder77Elem = document.querySelector('.ladder-77')
+
+
+// dice
+const dice1Elem = document.querySelector('.dice-1')
+const dice2Elem = document.querySelector('.dice-2')
+const dice3Elem = document.querySelector('.dice-3')
+const dice4Elem = document.querySelector('.dice-4')
+const dice5Elem = document.querySelector('.dice-5')
+const dice6Elem = document.querySelector('.dice-6')
+
+
 // console.log(restartElem)
 
 
@@ -211,6 +222,27 @@ function otherPlayerDice(){
 
     removeComputer();
     computerDiceOutput = Math.floor(Math.random() * 6) + 1
+    if(computerDiceOutput === 1){
+        dice1Elem.classList.remove('hidden')
+    }
+    else if(computerDiceOutput === 2){
+        dice2Elem.classList.remove('hidden')
+    }
+    else if(computerDiceOutput === 3){
+        dice3Elem.classList.remove('hidden')
+    }
+    else if(computerDiceOutput === 4){
+        dice4Elem.classList.remove('hidden')
+    }
+    else if(computerDiceOutput === 5){
+        dice5Elem.classList.remove('hidden')
+    }
+    else if(computerDiceOutput === 6){
+        dice6Elem.classList.remove('hidden')
+    }
+
+
+
     if ((computerPosition+computerDiceOutput+1)<=numberOfCells)
         computerPosition += computerDiceOutput
         if((computerPosition+1) === 100 ){

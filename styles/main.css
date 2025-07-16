@@ -77,6 +77,15 @@ h1 {
     width: 30%;
     float: right;
     box-sizing: border-box;
+    align-items: center;
+}
+
+
+.dice-1, .dice-2, .dice-3, .dice-4, .dice-5, .dice-6{
+    /* width: 40%; */
+    float: right;
+    box-sizing: border-box;
+
 }
 
 
