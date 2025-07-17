@@ -28,7 +28,6 @@ const computerCurrentPositionElem = document.querySelector('#computer-current-po
 const pastPositionElem = document.querySelector('#past-position')
 const computerPastPositionElem = document.querySelector('#computer-past-position')
 const diceElem = document.querySelector('.dice');
-// const diceDivElem = document.querySelector('.dice-div')
 const diceOutputElem = document.querySelector("#dice-output")
 const computerOutputElem = document.querySelector('#computer-dice-output');
 const computerMessageElem = document.querySelector('#computer-message');
@@ -37,7 +36,7 @@ const computerValuesElem = document.querySelector(".computer-values")
 const playerValuesElem = document.querySelector(".player-values")
 const restartElem = document.querySelector('#restart')
 
-// 
+//Snakes
 const snake13Elem = document.querySelector('.snake-13')
 const snake23Elem = document.querySelector('.snake-23')
 const snake52Elem = document.querySelector('.snake-52')
@@ -45,7 +44,7 @@ const snake57Elem = document.querySelector('.snake-57')
 const snake82Elem = document.querySelector('.snake-82')
 const snake86Elem = document.querySelector('.snake-86')
 
-// ladders
+// Ladders
 const ladder4Elem = document.querySelector('.ladder-4')
 const ladder20Elem = document.querySelector('.ladder-20')
 const ladder28Elem = document.querySelector('.ladder-28')
@@ -54,7 +53,7 @@ const ladder70Elem = document.querySelector('.ladder-70')
 const ladder77Elem = document.querySelector('.ladder-77')
 
 
-// dice
+// Dice
 const dice1Elem = document.querySelector('.dice-1')
 const dice2Elem = document.querySelector('.dice-2')
 const dice3Elem = document.querySelector('.dice-3')
@@ -74,8 +73,6 @@ const diceAudioElem = document.querySelector('#rollingDice')
 const noAudioElem = document.querySelector('#no')
 const laughAudioElem = document.querySelector('#laugh')
 
-
-// console.log(restartElem)
 
 
 function addCharacter(){
@@ -99,7 +96,7 @@ function removeComputer(){
     computerPosition = (99 - computerPosition)
 }
 
-// if the player locatoion and ladder Position is the same, he will go up
+// if the player position and ladder's Position is the same, he will go up
 function goingDown() {
 snakesPositions.forEach(snakePosition => {
         if (playerPosition === 12 && snakePosition === 12) {
@@ -178,7 +175,7 @@ snakesPositions.forEach(snakePosition => {
 } 
 
 
-// if the player Position and the snake mouth Position is the same he will go some steps down
+// if the player's osition and the snake position is the same, he will go down
 function goingUp() {
     ladderPositions.forEach(ladderPosition => {
         if (playerPosition === 3 && ladderPosition === 3) {
@@ -209,9 +206,7 @@ function goingUp() {
     })
         if(ladder === true){
             letsGoAudioElem.play()
-            // removeCharacter()
         }
-        // removeCharacter()
 }
 
 
@@ -272,36 +267,26 @@ function otherPlayerDice(){
     playerValuesElem.classList.add('hidden');
     computerPastPositionElem.textContent = `Computer's Past Position was ${99-computerPosition+1}`
     
-
-    // setTimeout(() => {
     removeComputer();
     computerDiceOutput = Math.floor(Math.random() * 6) + 1
-    //  diceElem.classList.add('hidden')
     if(computerDiceOutput === 1){
         dice1Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(computerDiceOutput === 2){
         dice2Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(computerDiceOutput === 3){
         dice3Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(computerDiceOutput === 4){
         dice4Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(computerDiceOutput === 5){
         dice5Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(computerDiceOutput === 6){
         dice6Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
-
 
 
     if ((computerPosition+computerDiceOutput+1)<=numberOfCells)
@@ -332,29 +317,22 @@ else {
         isProcessing = false;
         diceElem.disabled = false;
 
-        // Show dice GIF again
         diceElem.classList.remove('hidden');
 
-        // Hide all old dice faces
         removeFaces();
 
-        // Show player's values section
         computerValuesElem.classList.add('hidden');
         computerMessageElem.innerText = "" 
         playerValuesElem.classList.remove('hidden');
         currentPositionElem.innerText =""
         pastPositionElem.innerText =""
         diceOutputElem.innerText =""
-        // playerMessageElem = ""
         
-    }, 2500); // Delay to visually finish the computer move before player's turn
-}
+    }, 2500);
 
-        // computerValuesElem.classList.add('hidden');
+} }
 
-}
-
-//  this function will be run to get a rando number between 1 -6 
+//  This function will be run to get a random number between 1 -6 
 function dice(){
     if (isProcessing) 
         return; 
@@ -363,7 +341,6 @@ function dice(){
 
     removeFaces()
 
-    // diceElem.classList.add('hidden');
     computerValuesElem.classList.add('hidden')
     playerValuesElem.classList.remove('hidden')
     ladder = false
@@ -376,27 +353,21 @@ function dice(){
 
         if(diceOutput === 1){
         dice1Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(diceOutput === 2){
         dice2Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(diceOutput === 3){
         dice3Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(diceOutput === 4){
         dice4Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(diceOutput === 5){
         dice5Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
     else if(diceOutput === 6){
         dice6Elem.classList.remove('hidden')
-        // diceElem.classList.add('hidden')
     }
 
     if ((playerPosition+diceOutput+1)<=numberOfCells){
@@ -432,59 +403,24 @@ function dice(){
     // playerLose = true
 
     if (playerWin || playerLose)
-    // setTimeout(endGame() , 1000)
     endGame()
+
     else if(diceOutput === 6){
         playerMessageElem.textContent = "You have another roll"
         isProcessing = false; // ✅ Allow the player to click again
         diceElem.disabled = false;
-        // setTimeout(play() , 3000)
     }
+
     else{
-        // remove() 
     setTimeout(otherPlayerDice, 2000)
 
-    // setTimeout((playerValuesElem.classList.add('hidden')), 10000)
-    // computerValuesElem.classList.add('hidden')
-    // setTimeout(computerValuesElem.classList.remove('hidden'),20000)
-    // computerValuesElem.classList.remove('hidden')
     if(ladder)
         computerMessageElem.textContent = `The Computer Went UP Because of the Ladder at ${reachedValue}`
     else if (snake)
         computerMessageElem.textContent = `The Computer Went Down Because of the Snake at ${reachedValue}`
     }
 
-    // diceElem.classList.remove('hidden')
-    // console.log(diceElem)
-    // anotherTurn()
-    // setTimeout(play() , 4000)
 }
-
-
-
-// function anotherTurn(){
-//     // setTimeout(add(computerValuesElem),100)
-//     computerValuesElem.classList.add('hidden')
-//         console.log("you reachhed")
-//     console.log(diceElem)
-//     // diceElem.classList.remove('hidden')
-//     console.log(diceElem)
-
-
-//     // dice1Elem.classList.add('hidden')
-//     // dice2Elem.classList.add('hidden')
-//     // dice3Elem.classList.add('hidden')
-//     // dice4Elem.classList.add('hidden')
-//     // dice5Elem.classList.add('hidden')
-//     // dice6Elem.classList.add('hidden')
-
-//     // console.log(dice1Elem)
-
-//     // computerValuesElem.classList.add('hidden')
-//     console.log("Enter it")
-// }
-
-// dice()
 
     function add(Elem){
         setTimeout(Elem.classList.add('hidden') , 5000)
@@ -500,33 +436,22 @@ function endGame(){
     diceElem.classList.add('hidden')
     removeFaces()
     if(playerWin){
-    // alert("The game is ended, your a Winner")
     playerMessageElem.style.fontWeight = "bold"
     playerMessageElem.style.color = 'rgba(0, 0, 0, 1)'
-    playerMessageElem.textContent = "The game is ended, your a Winner"
+    playerMessageElem.textContent = "The game is ended, your win"
     winningAudioElem.play()
     congratsAudioElem.play()
 
     }
     else if(playerLose){
-    // alert("The game is ended, your Lose")
     computerMessageElem.style.fontWeight = "bold"
     computerMessageElem.style.color = 'rgba(0, 0, 0, 1)'
-    computerMessageElem.textContent = "The game is ended, your Lose"
+    computerMessageElem.textContent = "The game is ended, your lose"
     lossingAudioElem.play()
     gameOverAudioElem.play()
-    // playerMessageElem
     }
 
     restartElem.classList.remove('hidden')
-
-    // if(playerWin || playerLose){
-    // addCharacter()
-    // addComputer()
-// }
-
-    // score = 0
-    // scoreElem.textContent = "Your score is 0"
 }
 
     function restart(){
@@ -542,8 +467,10 @@ function endGame(){
         }
 
         restartElem.classList.add('hidden')
+
         removeCharacter()
         removeComputer()
+
         playerPosition = 0
         computerPosition = 0
         playerWin = false
@@ -552,17 +479,14 @@ function endGame(){
         snake = false
         isProcessing = false
         diceElem.disabled = false
-        // playerMessageElem.innerText = ""
-        // computerMessageElem.innerText = ""
-        // playerMessageElem.classList.add('hidden')
-        // computerMessageElem.classList.add('hidden')
+
         addCharacter()
         addComputer()
+
         diceElem.classList.remove('hidden')
-        diceElem.addEventListener('click', play); 
-        // createGrid();
+        diceElem.addEventListener('click', play);
+
         removeFaces()
-        // play()
 
     }
 
@@ -573,30 +497,25 @@ function play(event){
     if(event.target.classList.contains('dice')){
         if (isProcessing) 
             return;
-        // isProcessing = true;    
-        // diceElem.disabled = true
+
             diceAudioElem.play()
+
             dice()
         }
 }
 
 
-// Adding one character like the duck, and this character that will move over the game 
-
-
 
 function createGrid(){
-    // for every call that we require create a div
-    // append this call to our grid
+    // for every cell that we require create a div
+    // append this cell to our grid
 
-//    running the loop 100 times, then create div 100 rimes and add them to the grid class
+//running the loop 100 times, then create div 100 timrs and add them to the grid class
     
 let reverseCount = 0
 const tempCells = []
 let count = 1
-for (let i=100 ; i>=1; i--){
-        let countforSnakesandLadders = 101 - i
-        // (1)thats will create 100 div
+for (let i=100 ; i>=1; i--){        
         const cell = document.createElement('div')
         cell.classList.add("cell")
 
@@ -636,7 +555,7 @@ for (let i=100 ; i>=1; i--){
             gridElem.appendChild(row) 
         }        
 
-
+// Snakes:
         if(cell.innerText === "27"){
             cell.appendChild(snake13Elem)
         }
@@ -655,14 +574,6 @@ for (let i=100 ; i>=1; i--){
         else if(cell.innerText === "100"){
             cell.appendChild(snake82Elem)
         }
-        // else if(cell.innerText === ""){
-        //     cell.appendChild(snakeLastRowElem)        
-        // }
-
-        
-
-
-
 
 // Ladders:
         if(cell.innerText === "24"){
@@ -700,16 +611,3 @@ restartElem.addEventListener('click' , restart)
 
 document.addEventListener("DOMContentLoaded",init)
 
-// what I didnt add is, 
-// when he got 6
-// he has second play withe dice
-
-// after play once with the dice
-// then it is the computer turn
-// we will give him random dice number
-// then we will change the computer character 
-
-
-
-
-// the game over
