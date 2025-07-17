@@ -28,7 +28,7 @@ const computerCurrentPositionElem = document.querySelector('#computer-current-po
 const pastPositionElem = document.querySelector('#past-position')
 const computerPastPositionElem = document.querySelector('#computer-past-position')
 const diceElem = document.querySelector('.dice');
-const diceDivElem = document.querySelector('.dice-div')
+// const diceDivElem = document.querySelector('.dice-div')
 const diceOutputElem = document.querySelector("#dice-output")
 const computerOutputElem = document.querySelector('#computer-dice-output');
 const computerMessageElem = document.querySelector('#computer-message');
@@ -72,6 +72,7 @@ const downSnakeAudioElem = document.querySelector('#downSnake')
 const letsGoAudioElem = document.querySelector('#letsGo')
 const diceAudioElem = document.querySelector('#rollingDice')
 const noAudioElem = document.querySelector('#no')
+const laughAudioElem = document.querySelector('#laugh')
 
 
 // console.log(restartElem)
@@ -170,8 +171,10 @@ snakesPositions.forEach(snakePosition => {
         }
 
     })
-        if(snake === true)
+        if(snake === true){
             letsGoAudioElem.play()
+            laughAudioElem.play()
+        }
 } 
 
 
@@ -204,8 +207,11 @@ function goingUp() {
             ladder = true
         }
     })
-        if(ladder === true)
+        if(ladder === true){
             letsGoAudioElem.play()
+            // removeCharacter()
+        }
+        // removeCharacter()
 }
 
 

@@ -1,20 +1,8 @@
 body {
     align-items: center;
     font-size: 25px;
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* font-family: 'Courier New', Courier, monospace; */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    /* font-family: "Raleway"; */
-    /* text-shadow: 4px 4px 5px rgb(136, 255, 0); */
-    /* background-color: rgb(230, 0, 255); */
-    /* display: flex;
-    justify-content: center; */
-    /* background-image: url(../assets/BG.png);
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* opacity: 70%; */
-
     background-color: #528807a6;
 }
 
@@ -24,20 +12,11 @@ h1 {
 }
 
 .character {
-    /* background-image: url('../assets/boyCharacter.png'); */
     background-image: url('../assets/girl-pixel.gif');
-    /* by this background size: this will let the image be within the div size */
-    /* background-size: contain; */
-    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-
-/* .computer-size{
-    
-} */
-
 
 .cell {
     width: 9.9%;
@@ -53,11 +32,7 @@ h1 {
 }
 
 .player-values {
-    /* justify-content: right; */
     text-align: center;
-    /* display: none; */
-
-
 }
 
 .player-values img {
@@ -84,21 +59,12 @@ h1 {
 
 .dice-div {
      display: flex;
-    align-items: center; /* Align items vertically center */
-    justify-content: center; /* Center the items horizontally */
-    padding: 20px; /* Adjust padding as needed */
-
-
-}
-
-
-.dice-1, .dice-2, .dice-3, .dice-4, .dice-5, .dice-6{
-    /* width: 40%; */
-    /* float:top; */
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
     box-sizing: border-box;
-    /* justify-content: right; */
-
 }
+
 
 
 .face {
