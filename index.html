@@ -17,15 +17,30 @@
         <h1>Snake & Ladder</h1>
     </header>
     <div id="container">
+        <div class="message-dice">
+            <p id="player-message"></p>
+            <p id="computer-message"></p>
+            <button id="restart" class="hidden">restart</button>
+
+            <!-- <br> -->
+            <audio id="congrats" src="assets\you-win-sequence-2-183949.mp3"></audio>
+            <audio id="downSnake" src="assets\fromSnakes.mp3"></audio>
+            <audio id="gameOver" src="assets\game-over.mp3"></audio>
+            <audio id="winning" src="assets\137429076-cartoon-voice-congratulations-.m4a"></audio>
+            <audio id="lossing" src="assets\losing.mp3"></audio>
+            <audio id="letsGo" src="assets/letsGo.mp3"></audio>
+            <audio id="rollingDice" src="assets\dice.mp3"></audio>
+            <audio id="no" src="assets/low-no.mp3"></audio>
+
+        </div>
         <div class="dice-div">
             <img class="diec" src="assets/dice-gif.gif" alt="white-diec">
-
-            <img class="dice-1 hidden" src="assets/dice_1.png" alt="face-1-in-dice">
-            <img class="dice-2 hidden" src="assets/dice_2.png" alt="face-2-in-dice">
-            <img class="dice-3 hidden" src="assets/dice_3.png" alt="face-3-in-dice">
-            <img class="dice-4 hidden" src="assets/dice_4.png" alt="face-4-in-dice">
-            <img class="dice-5 hidden" src="assets/dice_5.png" alt="face-5-in-dice">
-            <img class="dice-6 hidden" src="assets/dice_6.png" alt="face-6-in-dice">
+            <img class="dice-1 face hidden" src="assets/dice_1.png" alt="face-1-in-dice">
+            <img class="dice-2 face hidden" src="assets/dice_2.png" alt="face-2-in-dice">
+            <img class="dice-3 face hidden" src="assets/dice_3.png" alt="face-3-in-dice">
+            <img class="dice-4 face hidden" src="assets/dice_4.png" alt="face-4-in-dice">
+            <img class="dice-5 face hidden" src="assets/dice_5.png" alt="face-5-in-dice">
+            <img class="dice-6 face hidden" src="assets/dice_6.png" alt="face-6-in-dice">
         </div>
         <div class="small-container">
             <div class="grid-wrapper">
@@ -33,21 +48,21 @@
                     <!-- <img src="/assets/snakes-big-last.png" alt="" class="snake-last-row"> -->
                     <img src="assets\snake-13.png" alt="" class="snake-13">
                     <img src="assets\snake-13.png" alt="" class="snake-52">
-                    <img src="/assets/snake-mid.png" alt="" class="snake-56">
-                    <img src="/assets/snake-4.png" alt="" class="snake-80">
+                    <img src="/assets/snake-mid.png" alt="" class="snake-57">
+                    <img src="/assets/snake-4.png" alt="" class="snake-23">
                     <img src="/assets/snakes-big-last.png" alt="" class="snake-86">
-                    <img src="assets\snake-4.png" alt="" class="snake-83">
+                    <img src="assets\snake-4.png" alt="" class="snake-82">
 
                     <img src="assets\small-ladder.png" alt="" class="ladder-4">
                     <img src="assets\big-ladder.png" alt="" class="ladder-20">
                     <img src="assets\big-ladder.png" alt="" class="ladder-28">
-                    <img src="assets\small-ladder.png" alt="" class="ladder-44">
+                    <img src="assets\small-ladder.png" alt="" class="ladder-49">
                     <img src="assets\small-ladder.png" alt="" class="ladder-70">
                     <img src="assets\small-ladder.png" alt="" class="ladder-77">
                 </div>
             </div>
 
-            
+
         </div>
         <div class="player-values hidden">
             <img src="assets/girl-pixel.gif" alt="My Character">
@@ -62,21 +77,6 @@
             <p id="computer-dice-output">Computer's Dice Output is 0</p>
             <p id="computer-current-position">Computer's Current Position is 1</p>
         </div>
-
-        <div class="message-dice">
-            <p id="player-message"></p>
-            <p id="computer-message"></p>
-            <button id="restart" class="hidden">restart</button>
-
-            <br>
-            <audio id="congrats" src="assets\you-win-sequence-2-183949.mp3"></audio>
-        </div>
-
-        
-        <!-- <hr> -->
-        <div></div>
-
-
 
     </div>
 </body>

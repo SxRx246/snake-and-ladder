@@ -1,21 +1,12 @@
 body {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     font-size: 25px;
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    /* font-family: "Raleway"; */
-    /* text-shadow: 4px 4px 5px rgb(136, 255, 0); */
-    /* background-color: rgb(230, 0, 255); */
-    /* display: flex;
-    justify-content: center; */
-    /* background-image: url(../assets/BG.png);
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* opacity: 70%; */
-
-    background-color: #528807a6;
+    background-color: #affc44a6;
+    margin: 0; /* Remove default margin */
 }
 
 h1 {
@@ -24,11 +15,7 @@ h1 {
 }
 
 .character {
-    /* background-image: url('../assets/boyCharacter.png'); */
     background-image: url('../assets/girl-pixel.gif');
-    /* by this background size: this will let the image be within the div size */
-    /* background-size: contain; */
-    /* wihout this line it will lets the duck apeare more than once in the div, which does not look good, so it is better to use the no repeate, to just apear once*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -83,12 +70,11 @@ h1 {
 }
 
 .dice-div {
-     display: flex;
-    align-items: center; /* Align items vertically center */
-    justify-content: center; /* Center the items horizontally */
-    padding: 20px; /* Adjust padding as needed */
-
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px; /* Space above the dice */
 }
 
 
@@ -117,16 +103,11 @@ h1 {
 }
 
 
-
 .grid-wrapper {
+    display: flex;
+    justify-content: center; /* Center the grid */
     width: 70%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    position: relative;
-    /* background-image: url(../assets/snakes-ladder-edited.png); */
-
 }
 
 
@@ -299,37 +280,27 @@ h1 {
     animation: pop-in 0.4s ease;
 } */
 
-
 .message-dice {
     clear: both;
     margin: 30px auto 0;
     background: #affc44a6;
-    /* color: #fff; */
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     padding: 20px 30px;
     font-size: 40px;
-    /* font-family: 'Comic Sans MS', cursive, sans-serif; */
     font-weight: bold;
     text-align: center;
     width: fit-content;
     max-width: 90%;
-    /* display: block; */
-    /* animation: pop-in 0.4s ease; */
 }
-
 
 
 .player-values,
 .computer-values {
-    /* justify-content: right; */
-    text-align: center; /* Center align text */
+    text-align: center;
     margin-top: 20px;
     width: 30%;
-    float: right;
-    position: relative;
-    box-sizing: border-box;
-    font-size: 23px;
+    float: none; /* Remove float to center align */
 }
 
 
@@ -338,10 +309,4 @@ h1 {
     padding: 20px;
     width: auto;
     font-size: 50px;
-    /* background-image: url(../assets/restart.png); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover;
-    background-position: center; */
-    background-color: rgb(244, 50, 50);
-    font-weight: bold;
 }
