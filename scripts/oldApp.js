@@ -6,9 +6,9 @@ const gridWidth = 10
 const numberOfCells = gridWidth * gridWidth
 
 
-// if user clicked on the diec, 
+// if user clicked on the dice, 
 // the character will move based 
-// on the result of the diec
+// on the result of the dice
 
 
 // if the 
@@ -26,7 +26,7 @@ let diceOutput
 const gridElem = document.querySelector('.grid')
 const scoreElem = document.querySelector('#Position-display')
 const audioElem = document.querySelector('#character')
-const diceElem = document.querySelector('.diec');
+const diceElem = document.querySelector('.dice');
 const diceOutputElem = document.querySelector("#dice-output")
 
 
@@ -76,7 +76,7 @@ function goingUp() {
 }
 
 //  this function will be run to get a rando number between 1 -6 
-function diec(){
+function dice(){
     removeCharacter();
     diceOutput = Math.floor(Math.random() * 6) + 1
     if (playerPosition<numberOfCells)
@@ -100,8 +100,8 @@ function endGame(){
 }
 
 function play(event){
-    if(event.target.classList.contains('diec'))
-            diec()
+    if(event.target.classList.contains('dice'))
+            dice()
 }
 
 // Adding one character like the duck, and this character that will move over the game 
@@ -134,7 +134,7 @@ for (let i=100 ; i>=1; i--){
 
         // to keep it listen to clicks
         // cell.addEventListener('click', handleClick)
-        // document.addEventListener('click', diec)
+        // document.addEventListener('click', dice)
 
         // textContent is the text content of the cell
         // it is the same as the innerText
@@ -189,7 +189,7 @@ for (let i=100 ; i>=1; i--){
 
 //         // to keep it listen to clicks
 //         // cell.addEventListener('click', handleClick)
-//         // document.addEventListener('click', diec)
+//         // document.addEventListener('click', dice)
 
 //         // textContent is the text content of the cell
 //         // it is the same as the innerText

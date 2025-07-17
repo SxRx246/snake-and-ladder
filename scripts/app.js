@@ -5,9 +5,9 @@ const gridWidth = 10
 const numberOfCells = gridWidth * gridWidth
 
 
-// if user clicked on the diec, 
+// if user clicked on the dice, 
 // the character will move based 
-// on the result of the diec
+// on the result of the dice
 
 let playerPosition = 0
 let computerPosition = 0
@@ -27,7 +27,7 @@ const currentPositionElem = document.querySelector('#current-position')
 const computerCurrentPositionElem = document.querySelector('#computer-current-position')
 const pastPositionElem = document.querySelector('#past-position')
 const computerPastPositionElem = document.querySelector('#computer-past-position')
-const diceElem = document.querySelector('.diec');
+const diceElem = document.querySelector('.dice');
 const diceDivElem = document.querySelector('.dice-div')
 const diceOutputElem = document.querySelector("#dice-output")
 const computerOutputElem = document.querySelector('#computer-dice-output');
@@ -349,7 +349,7 @@ else {
 }
 
 //  this function will be run to get a rando number between 1 -6 
-function diec(){
+function dice(){
     if (isProcessing) 
         return; 
     isProcessing = true; 
@@ -564,13 +564,13 @@ function play(event){
     computerMessageElem.style.color = "black"
     playerMessageElem.style.color = "black"
 
-    if(event.target.classList.contains('diec')){
+    if(event.target.classList.contains('dice')){
         if (isProcessing) 
             return;
         // isProcessing = true;    
         // diceElem.disabled = true
             diceAudioElem.play()
-            diec()
+            dice()
         }
 }
 
